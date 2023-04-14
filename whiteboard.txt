@@ -1,0 +1,32 @@
+Turning strings to URL
+
+URLs cannot have spaces instead all spaces in the string replaced in %20 
+write an algorithm that will replace all space in sting %20 but DO NOT use replace()
+
+input: "Jasmin Ann Jones"
+output: "Jasmin%20Ann%20Jones"
+
+please solve the problem with and without recursion
+
+if (string === " ")
+  return of would excluding the " " and replacing it with %20
+
+const turningStringIntoURL = (string) => {
+  let phrase = string.split(" ").join("%20").toLowerCase();
+  return phrase
+}
+
+// recursion solution
+
+const turnStringIntoURL = (string) => {
+  if (string.length === 0) {
+    return ""
+  }else if (string[0] === " ")
+    {
+      return '%20' + turnStringIntoURL(string.slice(1))
+    }
+  else
+    {
+      return string[0].toLowerCase() + turnStringIntoURL(string.slice(1))
+    }
+}
